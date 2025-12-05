@@ -3,7 +3,11 @@ import os, json
 
 app = Flask(__name__)
 
-REPORTS_FOLDER = os.path.join(os.getcwd(), 'reports')
+# Use /tmp for Vercel serverless environment, or local reports folder
+if os.environ.get('VERCEL'):
+    REPORTS_FOLDER = '/tmp/reports'
+else:
+    REPORTS_FOLDER = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'reports')
 os.makedirs(REPORTS_FOLDER, exist_ok=True)
 
 @app.route('/')
