@@ -1,0 +1,10 @@
+Flask>=2.0
+requests>=2.28
+beautifulsoup4>=4.11
+Pillow>=9.0
+pillow-avif-plugin>=1.0
+htmlmin>=0.1
+csscompressor>=0.9
+rjsmin>=1.2
+python-magic>=0.4; platform_system != 'Windows'
+gunicorn>=20.1.0
